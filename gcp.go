@@ -58,11 +58,11 @@ func (gcp *GCPSpeechConv) Convert(data []byte) (string, error) {
 	return best.Transcript, nil
 }
 
-func (gcp *GCPSpeechConv) recognize(data []byte) (*speech.StreamingRecognizeResponse, error) {
-	return gcp.client.Recognize(gcp.ctx, &speech.StreamingRecognizeRequest{
+func (gcp *GCPSpeechConv) recognize(data []byte) (*speech.RecognizeResponse, error) {
+	return gcp.client.Recognize(gcp.ctx, &speech.RecognizeRequest{
 		Config: &speech.RecognitionConfig{
-			Encoding:   speech.RecognitionConfig_LINEAR16,
-			SampleRate: 16000,
+			Encoding:        speech.RecognitionConfig_LINEAR16,
+			SampleRateHertz: 16000,
 		},
 		Audio: &speech.RecognitionAudio{
 			AudioSource: &speech.RecognitionAudio_Content{Content: data},
