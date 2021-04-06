@@ -8,7 +8,7 @@ import (
 	"google.golang.org/grpc"
 
 	gcontext "golang.org/x/net/context"
-	speech "google.golang.org/genproto/googleapis/cloud/speech/v1beta1"
+	speech "google.golang.org/genproto/googleapis/cloud/speech/v1"
 )
 
 type GCPSpeechConv struct {
