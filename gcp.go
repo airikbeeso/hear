@@ -58,8 +58,8 @@ func (gcp *GCPSpeechConv) Convert(data []byte) (string, error) {
 	return best.Transcript, nil
 }
 
-func (gcp *GCPSpeechConv) recognize(data []byte) (*speech.SyncRecognizeResponse, error) {
-	return gcp.client.SyncRecognize(gcp.ctx, &speech.SyncRecognizeRequest{
+func (gcp *GCPSpeechConv) recognize(data []byte) (*speech.StreamingRecognizeResponse, error) {
+	return gcp.client.Recognize(gcp.ctx, &speech.StreamingRecognizeRequest{
 		Config: &speech.RecognitionConfig{
 			Encoding:   speech.RecognitionConfig_LINEAR16,
 			SampleRate: 16000,
