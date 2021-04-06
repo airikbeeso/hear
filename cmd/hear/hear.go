@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"https://github.com/airikbeeso/hear"
+	"github.com/airikbeeso/hear"
 )
 
 func main() {
